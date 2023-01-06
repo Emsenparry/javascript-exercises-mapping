@@ -27,12 +27,10 @@ const data = [
 //** array of objects containing people */
 
 const male = "https://www.w3schools.com/howto/img_avatar.png";
-
 const female = "https://www.w3schools.com/howto/img_avatar2.png";
 
 const filterPerson = (id) => {
   //document.getElementById("mother").innerHTML = "";
-  //console.log(data.filter((x) => x.id === id)[0]);
   createElements(data.filter((x) => x.id == id)[0], "father");
 };
 
@@ -48,6 +46,9 @@ const createElements = (data, father) => {
   img.setAttribute("src", data.gender === "male" ? male : female);
   img.setAttribute("alt", data.name + " er ansat som " + data.job);
 
+
+
+  //Creating Article, h4, bold and p tag.
   let art = document.createElement("article");
   art.setAttribute("class", "container");
 
@@ -61,6 +62,8 @@ const createElements = (data, father) => {
   let pTextNode = document.createTextNode(data.job);
   p.appendChild(pTextNode);
 
+
+  //Append childs
   h4.appendChild(b);
   art.appendChild(h4);
   art.appendChild(p);
@@ -80,7 +83,6 @@ const createElement = (data) => {
     <p>${data.job}</p>
   </article>
 </figure>
-  
   `;
 };
 
